@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170428085839) do
+ActiveRecord::Schema.define(version: 20170428101848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.string   "image"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -25,6 +33,7 @@ ActiveRecord::Schema.define(version: 20170428085839) do
     t.text     "image"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
+    t.string   "role"
   end
 
 end

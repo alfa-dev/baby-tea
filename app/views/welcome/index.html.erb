@@ -1,7 +1,7 @@
 <h2>Chá de bebe da ALICE !</h2>
 <% if current_user %>
-Signed in as <strong><%= current_user.name %></strong>!
-<%= link_to "Sign out", signout_path, id: "sign_out" %>
+	<%= image_tag current_user.image %><strong><%= current_user.name %> </strong>!
+	<%= link_to "Logout", signout_path, id: "sign_out" %>
 <% else %>
-<%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+	<%= link_to "Logar com Facebook", "/auth/facebook", id: "sign_in" %>
 <% end %>
