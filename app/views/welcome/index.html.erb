@@ -1,7 +1,11 @@
-<h2>Chá de bebe da ALICE !</h2>
 <% if current_user %>
 	<%= image_tag current_user.image %><strong><%= current_user.name %> </strong>!
 	<%= link_to "Logout", signout_path, id: "sign_out" %>
 <% else %>
-	<%= link_to "Logar com Facebook", "/auth/facebook", id: "sign_in" %>
+	<header>
+		<h1>Chá de bebê</h1>
+  		<%= image_tag("alice.png") %>
+	</header>
+		<%= link_to "Logar com Facebook", "/auth/facebook", id: "sign_in", class:"loginBtn loginBtn--facebook" %>
+
 <% end %>
