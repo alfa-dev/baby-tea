@@ -2,17 +2,33 @@
 	margin-top: 50px;
 	text-align: center;
 	text-shadow: 0px 0px 10px #fff;
-  	background-image: image-url("background-tablet.jpg");
+  	background-image: image-url("background-desktop.jpg");
+	
+	-webkit-background-size: cover;         /* Safari 3.0 */
+     -moz-background-size: cover;           /* Gecko 1.9.2 (Firefox 3.6) */
+       -o-background-size: cover;           /* Opera 9.5 */
+          background-size: cover;
 
 	h1 {
 		margin-bottom: -1px;
-		font-weight: lighter;
-    font-size: 25px;
-    text-indent: 35px;
-    margin-bottom: -20px;
+		font-weight: normal;
+    	font-size: 25px;
+    	text-indent: 35px;
+    	margin-bottom: -20px;
 	}
 
 	img {
 		margin-right: 35px;
+	}
+}
+
+
+@media (max-width: 576px) { 
+	.unlogged {
+  		background-image: image-url("background-mobile.jpg");
+		
+		img {
+			width: 80%;
+		}
 	}
 }
