@@ -1,0 +1,49 @@
+.logged {
+	
+	&:before {
+		content: "";
+		background: no-repeat center center fixed;
+		background-size: cover;
+		background-image: image-url("background-mobile.jpg");
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		opacity: 0.4;
+		-webkit-background-size: cover;         /* Safari 3.0 */
+     	-moz-background-size: cover;           /* Gecko 1.9.2 (Firefox 3.6) */
+       	-o-background-size: cover;           /* Opera 9.5 */
+       	background-size: cover;
+       	z-index: -1;
+	}
+
+	header {
+		width: 100%;
+    	background: #3c3c3c;
+    	color: #fff;
+    	font-weight: bold; 
+		opacity: 0.85;
+		padding: 10px;
+		box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+		box-sizing: border-box;
+
+
+		img {
+			display: inline-block;
+			border-radius: 50%;
+			box-shadow: 0px 0px 0px 2px #ccc;
+			float: left;
+			margin-right: 10px;
+		}
+		p {
+			display: inline-block;
+		}
+		a {
+			float: right;
+			color: red;
+		}
+	}
+}
+
+@media (max-width: 576px) { 
+	.logged {}
+}
