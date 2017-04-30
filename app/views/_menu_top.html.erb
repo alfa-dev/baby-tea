@@ -1,0 +1,24 @@
+<% if current_user && current_user.is_admin? %>
+	<section id="logged">
+		<header id="user" class="card">
+			<%= image_tag current_user.image %>
+			<p><strong>Admin - </strong><%= current_user.name %></p>
+			<%= link_to "Logout", signout_path, id: "sign_out" %>
+
+			<nav>
+				<ul>
+					<li><%= link_to "Produtos", products_path %></li>
+					<li><%= link_to "Cadastrar produto", new_product_path %></li>
+				</ul>
+			</nav>
+		</header>
+	</section>
+<% elsif current_user %>
+	<section id="logged">
+		<header id="user" class="card">
+			<%= image_tag current_user.image %>
+			<p><%= current_user.name %></p>
+			<%= link_to "Logout", signout_path, id: "sign_out" %>
+		</header>		
+	</section>
+<% end %>

@@ -1,0 +1,32 @@
+<% if @product.errors.any? %>
+	<%= @product.errors %>
+<% end %>
+
+<%= form_for @product do |product| %>
+	
+	<p>
+		<%= product.label :name %>
+		<%= product.text_field :name %>
+	</p>
+
+	<p>
+		<%= product.label :image %>
+		<%= product.text_field :image %>
+	</p>
+
+	<p>
+		<%= product.label :url %>
+		<%= product.text_field :url %>
+	</p>
+
+	<p>
+		<%= product.label :category %>
+		<%= product.select :category do %>
+		<%= options_for_select ([:low, :med, :high]) %>
+		<% end %>
+	</p>
+
+	<p>
+		<%= product.submit %>
+	</p>
+<% end %>

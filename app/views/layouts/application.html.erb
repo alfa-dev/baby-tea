@@ -11,6 +11,8 @@
   </head>
 
   <body class="<%= current_user.nil? ? "unlogged" : "logged"  %>">
+	<%= flash[:notice] %>
+  	<%= render partial: '/menu_top' %>
     <%= yield %>
   </body>
 </html>

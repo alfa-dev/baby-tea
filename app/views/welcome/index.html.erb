@@ -4,13 +4,4 @@
   		<%= image_tag("alice.png") %>
 	</header>
 		<%= link_to "Logar com Facebook", "/auth/facebook", id: "sign_in", class:"loginBtn loginBtn--facebook" %>
-<% else %>
-	
-	<section id="logged">
-		<header id="user">
-			<%= image_tag current_user.image %>
-			<p><%= current_user.name %></p>
-			<%= link_to "Logout", signout_path, id: "sign_out" %>
-		</header>		
-	</section>
 <% end %>
