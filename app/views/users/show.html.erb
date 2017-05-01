@@ -1,0 +1,14 @@
+<%= link_to "Ver lista completa", products_path %>
+
+<h2>Minha lista de presentes</h2>
+<ul class="gifts-list card">
+<% @user_products.each do |product| %>
+	<li>
+		<span class="img" style="background-image: url(<%= product.image %>)"></span>
+		<span class="name"><%= product.name %></span>
+		<div class="actions">
+			<span><%= link_to :delete, admin_product_path(product), method: :delete, data: { confirm: "Tem certeza que deseja remover item '#{product.name}' da sua lista?" } %></span>
+		</div>
+	</li>
+<% end %>
+</ul>

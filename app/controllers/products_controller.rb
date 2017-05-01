@@ -4,57 +4,21 @@ class ProductsController < ApplicationController
 		@products = Product.all.group_by &:name
 	end
 
-	def new
-		@product = Product.new 
-	end
-
 	def edit
-		find_product 
+		find_product
+
+		@product.user = current_user
+
+		if @product.save
+		    redirect_to user_path(current_user), notice: 'Produto foi selecionado com sucesso'
+		else
+		    redirect_to :back, notice: @product.errors
+		end
 	end
 
 	def show
 		find_product
 	end
-
-	def create
-		quantity = params[:quantity].to_i > 1 ? params[:quantity].to_i : 1
-
-		quantity.times do |i|
-
-			@product = Product.new product_params
-
-		    if @product.save
-		     	redirect_to product_path(@product), notice: 'Produto foi criado com sucesso' unless quantity > 1
-		    else
-		    	redirect_to :back, notice: @product.errors
-		    end
-		end
-
-		if quantity > 1
-			redirect_to products_path, notice: "#{quantity} produtos foram criados com sucesso"
-		end
-	end
-
-	def update
-		find_product
-
-		Product.where(name: @product.name).update(product_params)
-
-	    if @product.save
-	      redirect_to product_path(@product), notice: 'Produto foi atualizado com sucesso'
-	    end
-	end
-
-	def destroy
-		find_product
-
-		if Product.where(name: @product.name).destroy_all
-			redirect_to products_path, notice: "#{@product.name} deletado com sucesso"
-		else
-			redirect_to :back, notice: @product.errors
-		end
-	end
-
 
 	private
 
