@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
 	def index
-		@products = Product.all
+		@products = Product.all.group_by &:name
 	end
 
 	def new
@@ -17,27 +17,38 @@ class ProductsController < ApplicationController
 	end
 
 	def create
-		@product = Product.new product_params
+		quantity = params[:quantity].to_i > 1 ? params[:quantity].to_i : 1
 
-	    if @product.save
-	     	redirect_to product_path(@product), notice: 'Produto foi criado com sucesso'
-	    else
-	    	redirect_to :back, notice: @product.errors
-	    end
+		quantity.times do |i|
+
+			@product = Product.new product_params
+
+		    if @product.save
+		     	redirect_to product_path(@product), notice: 'Produto foi criado com sucesso' unless quantity > 1
+		    else
+		    	redirect_to :back, notice: @product.errors
+		    end
+		end
+
+		if quantity > 1
+			redirect_to products_path, notice: "#{quantity} produtos foram criados com sucesso"
+		end
 	end
 
 	def update
-		@product = Product.new product_params
+		find_product
+
+		Product.where(name: @product.name).update(product_params)
 
 	    if @product.save
-	      redirect_to product_path(@product), notice: 'Produto foi criado com sucesso'
+	      redirect_to product_path(@product), notice: 'Produto foi atualizado com sucesso'
 	    end
 	end
 
 	def destroy
 		find_product
 
-		if @product.destroy
+		if Product.where(name: @product.name).destroy_all
 			redirect_to products_path, notice: "#{@product.name} deletado com sucesso"
 		else
 			redirect_to :back, notice: @product.errors

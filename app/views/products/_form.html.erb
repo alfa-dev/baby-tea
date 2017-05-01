@@ -26,7 +26,12 @@
 		<% end %>
 	</p>
 
-	<p>
-		<%= product.submit %>
-	</p>
+	<% if params[:action] == 'new' %>
+		<p>
+			<%= label_tag :quantity %>
+			<%= text_field_tag :quantity %>
+		</p>
+	<% end %>
+
+	<p> <%= product.submit %> </p>
 <% end %>

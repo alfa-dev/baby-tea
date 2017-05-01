@@ -1,7 +1,11 @@
-<ul>
+<ul class="products-list">
 	<% @products.each do |product| %>
+		<% quantity = product.second.count %>
+		<% product 	= product.second.first %>
 		<li>
+			<span class="img" style="background-image: url(<%= product.image %>)"></span>
 			<span class="name"><%= product.name %></span>
+			<span class="quantidade"><%= quantity %></span>
 			<div class="actions">
 				<span><%= link_to t(:edit), edit_product_path(product) %></span>
 				<span><%= link_to t(:delete), product_path(product), method: :delete %></span>
