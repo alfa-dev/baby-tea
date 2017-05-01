@@ -25,7 +25,6 @@
 		padding: 10px;
 		box-sizing: border-box;
 
-
 		img {
 			display: inline-block;
 			border-radius: 50%;
@@ -41,6 +40,12 @@
 			color: red;
 		}
 	}
+}
+
+main {
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 20px;
 }
 
 @media (max-width: 576px) { 

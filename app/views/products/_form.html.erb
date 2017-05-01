@@ -21,15 +21,15 @@
 
 	<p>
 		<%= product.label :category %>
-		<%= product.select :category do %>
-		<%= options_for_select ([:low, :med, :high]) %>
+		<%= product.select :category, {include_blank: 'category'} do %>
+			<%= options_for_select ([:low, :med, :high]) %>
 		<% end %>
 	</p>
 
 	<% if params[:action] == 'new' %>
 		<p>
 			<%= label_tag :quantity %>
-			<%= text_field_tag :quantity %>
+			<%= number_field_tag :quantity %>
 		</p>
 	<% end %>
 

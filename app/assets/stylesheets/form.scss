@@ -1,0 +1,53 @@
+form {
+
+    // background: rgba(255,255,255,0.7);
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        position: relative;
+
+        &.withJs{
+            transition: .3s;
+            transform: translate(10px, 20px);
+            height: 0px;
+            opacity: 0.8;
+
+            &.focus {
+                transform: translate(0px, -13px);
+                font-size: 12px;
+            }
+        }
+    }
+
+    input:not([type="submit"]), select {
+        background-color: rgba(255,255,255,0.7);
+        border: none;
+        border-bottom: 1px solid #9e9e9e;
+        border-radius: 0;
+        outline: none;
+        line-height: 3rem;
+        height: 3rem;
+        width: 100%;
+        font-size: 1rem;
+        margin: 0 0 20px 0;
+        padding: 0 10px;
+        box-shadow: none;
+        box-sizing: border-box;
+    }
+
+    select {
+        width: auto;
+    }
+
+    input[type="submit"] {
+        font-size: 20px;
+        width: 200px;
+        margin: 0 auto;
+        display: block;
+    }
+}
