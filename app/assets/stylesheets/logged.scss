@@ -35,6 +35,9 @@
 		p {
 			display: inline-block;
 		}
+		a {
+			color: #fff;
+		}
 		> a {
 			float: right;
 			color: red;
@@ -54,7 +57,7 @@
 				    a {
 				    	width: 100%;
 				    	display: block;
-				    	background: #fff;
+				    	background: #333;
 				    	border: 1px solid #ccc;
 				    	padding: 10px;
 				    	box-sizing: border-box; 
