@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require_tree .
 
+
 bodyOnReady(function(){
 	var form = document.querySelector("form");
 
@@ -27,7 +28,8 @@ bodyOnReady(function(){
 			if(e.type == "focusin"){
 				label.classList.add("focus");
 			}
-			if(e.type == "focusout"){
+			if(e.type == "focusout" && e.value == ""){
+				
 				label.classList.remove("focus");
 			}
 		}

@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
 	def index
-		@products = Product.all.group_by &:name
+		@products = Product.all.where(user: nil).group_by &:name
 	end
 
 	def edit
@@ -18,6 +18,13 @@ class ProductsController < ApplicationController
 
 	def show
 		find_product
+	end
+
+	def destroy
+		find_product
+
+		@product.update(user: nil)
+		redirect_to user_path(current_user)
 	end
 
 	private

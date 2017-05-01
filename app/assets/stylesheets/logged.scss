@@ -35,9 +35,32 @@
 		p {
 			display: inline-block;
 		}
-		a {
+		> a {
 			float: right;
 			color: red;
+		}
+
+		nav {
+			margin-top: 5px;
+			ul {
+				padding: 0px;
+				margin: 0px;
+
+				li{
+				    display: inline-block;
+				    width: auto;
+				    position: relative;
+
+				    a {
+				    	width: 100%;
+				    	display: block;
+				    	background: #fff;
+				    	border: 1px solid #ccc;
+				    	padding: 10px;
+				    	box-sizing: border-box; 
+				    }
+				}
+			}
 		}
 	}
 }

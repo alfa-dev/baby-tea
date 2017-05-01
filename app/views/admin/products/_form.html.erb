@@ -2,7 +2,7 @@
 	<%= @product.errors %>
 <% end %>
 
-<%= form_for @product do |product| %>
+<%= form_for [:admin, @product] do |product| %>
 	
 	<p>
 		<%= product.label :name %>

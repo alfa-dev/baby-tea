@@ -10,8 +10,8 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
   </head>
 
-  <body class="<%= current_user.nil? ? "unlogged" : "logged"  %>">
-	<%= flash[:notice] %>
+  <body class="<%= current_user.nil? ? "unlogged" : "logged"  %> <%= "admin" if controller.class.parents.include? Admin %>">
+	  <%= flash[:notice] %>
   	<%= render partial: '/menu_top' %>
 
   	<main>

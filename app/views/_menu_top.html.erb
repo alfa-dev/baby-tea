@@ -1,24 +1,18 @@
-<% if current_user && current_user.is_admin? %>
+<% if current_user %>
 	<section id="logged">
 		<header id="user" class="card">
 			<%= image_tag current_user.image %>
-			<p><strong>Admin - </strong><%= current_user.name %></p>
-			<%= link_to "Logout", signout_path, id: "sign_out" %>
-
+			<p><strong><%= link_to "Admin", admin_products_path if admin?%> - </strong><%= link_to current_user.name, user_path(current_user) %></p>
+			
 			<nav>
 				<ul>
-					<li><%= link_to "Produtos", admin_products_path %></li>
-					<li><%= link_to "Cadastrar produto", new_admin_product_path %></li>
+					<% if controller.class.parents.include? Admin %>
+						<li><%= link_to "Produtos", admin_products_path %></li>
+						<li><%= link_to "Cadastrar produto", new_admin_product_path %></li>
+					<% end %>
+					<li><%= link_to "Logout", signout_path, id: "sign_out" %></li>
 				</ul>
 			</nav>
 		</header>
-	</section>
-<% elsif current_user %>
-	<section id="logged">
-		<header id="user" class="card">
-			<%= image_tag current_user.image %>
-			<p><%= current_user.name %></p>
-			<%= link_to "Logout", signout_path, id: "sign_out" %>
-		</header>		
 	</section>
 <% end %>
