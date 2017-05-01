@@ -1,12 +1,63 @@
-<ul class="gifts-list">
-	<% @products.each do |product| %>
-		<% quantity = product.second.count %>
-		<% product 	= product.second.first %>
-		<li>
-			<span class="img" style="background-image: url(<%= product.image %>)"></span>
-			<span class="name"><%= product.name %></span>
-			<div class="actions">
-				<span><%= link_to :pick, edit_product_path(product) %></span>
-		</li>	
-	<% end %>
-</ul>
+<section>
+	<h2>Fralda</h2>
+	<ul class="gifts-list diaper">
+		<% @products_diaper.each do |product| %>
+			<% quantity = product.second.count %>
+			<% product 	= product.second.first %>
+			<li>
+				<span class="img" style="background-image: url(<%= product.image %>)"></span>
+				<span class="name"><%= product.name %></span>
+				<div class="actions">
+					<span><%= link_to t(:pick), edit_product_path(product) %></span>
+			</li>	
+		<% end %>
+	</ul>
+</section>
+
+<section>
+	<h2>Lista categoria 1</h2>
+	<ul class="gifts-list low">
+		<% @products_low.each do |product| %>
+			<% quantity = product.second.count %>
+			<% product 	= product.second.first %>
+			<li>
+				<span class="img" style="background-image: url(<%= product.image %>)"></span>
+				<span class="name"><%= product.name %></span>
+				<div class="actions">
+					<span><%= link_to t(:pick), edit_product_path(product) %></span>
+			</li>	
+		<% end %>
+	</ul>
+</section>
+
+<section>
+	<h2>Lista categoria 2</h2>
+	<ul class="gifts-list med">
+		<% @products_med.each do |product| %>
+			<% quantity = product.second.count %>
+			<% product 	= product.second.first %>
+			<li>
+				<span class="img" style="background-image: url(<%= product.image %>)"></span>
+				<span class="name"><%= product.name %></span>
+				<div class="actions">
+					<span><%= link_to t(:pick), edit_product_path(product) %></span>
+			</li>	
+		<% end %>
+	</ul>
+</section>
+
+<section>
+	<h2>Lista categoria - Família & pessoas muito generosas</h2>
+	<ul class="gifts-list high">
+		<% @products_high.each do |product| %>
+			<% quantity = product.second.count %>
+			<% product 	= product.second.first %>
+			<li>
+				<span class="img" style="background-image: url(<%= product.image %>)"></span>
+				<span class="name"><%= product.name %></span>
+				<div class="actions">
+					<span><%= link_to t(:pick), edit_product_path(product) %></span>
+			</li>	
+		<% end %>
+	</ul>
+</section>

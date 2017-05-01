@@ -22,7 +22,7 @@
 	<p>
 		<%= product.label :category %>
 		<%= product.select :category, {include_blank: 'category'} do %>
-			<%= options_for_select ([:low, :med, :high]) %>
+			<%= options_for_select ([[t(:low), :low], [t(:med), :med], [t(:high), :high], [t(:diaper), :diaper] ]) %>
 		<% end %>
 	</p>
 
