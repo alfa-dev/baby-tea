@@ -5,6 +5,7 @@
 			<% quantity = product.second.count %>
 			<% product 	= product.second.first %>
 			<li>
+				<%= link_to "🔎", product.url, target:"_blank", class: "url" unless product.url.empty? %>
 				<span class="img" style="background-image: url(<%= product.image %>)"></span>
 				<span class="name"><strong>	<%= product.name %></strong><br><%= product.brand %></span>
 				<div class="actions">

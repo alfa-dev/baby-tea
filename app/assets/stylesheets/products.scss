@@ -49,11 +49,32 @@
 		padding: 10px;
 		margin: 5px;
     	background-color: rgba(255,255,255,0.9);
+    	position: relative;
 
 		.img, .name, .actions {
 			width: 100%;
   			text-align: center;
   			display: block;
+		}
+
+		.url {
+			width: 40px;
+			line-height: 40px;
+			display: block;
+			text-align: center;
+			background-color: #3498db;
+			color: #fff;
+			font-size: 22px;
+			text-decoration: none; 
+			border-radius: 50%;
+			position: absolute;
+			top: -8px;
+			right: -8px;
+			transition: .3s;
+
+			&:hover {
+				transform: scale(1.1);
+			} 
 		}
 
 		.img {
