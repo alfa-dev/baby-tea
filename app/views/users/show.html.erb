@@ -7,7 +7,7 @@
 			
 			<li>
 				<span class="img" style="background-image: url(<%= product.image %>)"></span>
-				<span class="name"><%= product.name %></span>
+				<span class="name"><strong>	<%= product.name %></strong><br><%= product.brand %></span>
 				<div class="actions">
 					<span><%= link_to t(:delete), product_path(product), method: :delete, class: "button",data: { confirm: "Tem certeza que deseja remover item '#{product.name}' da sua lista?" } %></span>
 				</div>
@@ -23,7 +23,7 @@
 			
 			<li>
 				<span class="img" style="background-image: url(<%= product.image %>)"></span>
-				<span class="name"><%= product.name %></span>
+				<span class="name"><strong>	<%= product.name %></strong><br><%= product.brand %></span>
 				<div class="actions">
 					<span><%= link_to t(:delete), product_path(product), method: :delete, class: "button",data: { confirm: "Tem certeza que deseja remover item '#{product.name}' da sua lista?" } %></span>
 				</div>
