@@ -26,9 +26,7 @@
 
 	<p>
 		<%= product.label :category %>
-		<%= product.select :category, {include_blank: 'category'} do %>
-			<%= options_for_select ([[t(:low), :low], [t(:med), :med], [t(:high), :high], [t(:diaper), :diaper] ]) %>
-		<% end %>
+		<%= product.select :category, [[t(:low), :low], [t(:med), :med], [t(:high), :high], [t(:diaper), :diaper] ] %>
 	</p>
 
 	<% if params[:action] == 'new' %>
