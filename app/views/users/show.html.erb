@@ -1,5 +1,6 @@
-<%= link_to "Ver lista completa", products_path %>
-
+<section>
+	<%= link_to "Ver lista completa", products_path, class: "main-button" %>
+</section>
 <% title = (@user_products_diaper.count > 1) ? 'Minhas fraldas' : 'Minha fralda' %>
 <%= render partial: 'products/product_list', locals: { category: title, products: @user_products_diaper } %>
 

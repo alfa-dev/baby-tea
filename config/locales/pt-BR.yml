@@ -1,10 +1,10 @@
 pt-BR:
   category: categoria
-  delete: remover da lista
+  delete: <i>❌</i> remover da lista
   edit: editar
   image: imagem
   name: nome
-  pick: escolher
+  pick: <i>✔</i>escolher
   quantity: quantidade
   remove: remover
   url: referência

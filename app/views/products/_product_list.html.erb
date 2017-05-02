@@ -1,18 +1,20 @@
 <section> 
 	<h2><%= category %></h2>
 	<ul class="gifts-list <%= category %>">
-		<% products.each do |product| %>
-			<% quantity = product.second.count if product.class == Array %>
-			<% product 	= product.second.first if product.class == Array %>
-			<li>
-				<%= link_to "🔎", product.url, target:"_blank", class: "url" unless product.url.empty? %>
-				<span class="img" style="background-image: url(<%= product.image %>)"></span>
-				<span class="name"><strong>	<%= product.name %></strong><br><%= product.brand %></span>
-				<div class="actions">
-					<span><%= link_to t(:pick), edit_product_path(product) if controller.controller_name == "products" %></span>
-					<span><%= link_to t(:delete), product_path(product), method: :delete, class: "button",data: { confirm: "Tem certeza que deseja remover item '#{product.name}' da sua lista?" } if controller.controller_name == "users" %></span>
+		<% products.each do |product| %><!--
+		 	<% quantity = product.second.count if product.class == Array %>
+		 	<% product 	= product.second.first if product.class == Array %>
+		 --><li>
+		 		<div class="container">
+					<%= link_to "🔎", product.url, target:"_blank", class: "url" unless product.url.empty? %>
+					<span class="img" style="background-image: url(<%= product.image %>)"></span>
+					<span class="name"><strong>	<%= product.name %></strong><br><%= product.brand %></span>
+					<div class="actions">
+						<span><%= link_to t(:pick).html_safe, edit_product_path(product), class:"pick" if controller.controller_name == "products" %></span>
+						<span><%= link_to t(:delete).html_safe, product_path(product), method: :delete, class: "delete",data: { confirm: "Tem certeza que deseja remover item '#{product.name}' da sua lista?" } if controller.controller_name == "users" %></span>
+					</div>
 				</div>
-			</li>	
-		<% end %>
+			</li><!-- 	
+     --><% end %>
 	</ul>
 </section>

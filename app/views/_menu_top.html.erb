@@ -1,5 +1,5 @@
 <% if current_user %>
-	<section id="logged">
+	<div id="logged">
 		<header id="user" class="card">
 			<%= image_tag current_user.image %>
 			<p><strong><%= link_to "Admin", admin_products_path if admin?%> - </strong><%= link_to current_user.name, user_path(current_user) %></p>
@@ -14,5 +14,5 @@
 				</ul>
 			</nav>
 		</header>
-	</section>
+	</div>
 <% end %>
