@@ -1,36 +1,11 @@
 <%= link_to "Ver lista completa", products_path %>
 
-<section> 
-	<h2><%= (@user_products_diaper.count > 1) ? 'Minhas fraldas' : 'Minha fralda' %></h2>
-	<ul class="my-gifts-list">
-		<% @user_products_diaper.each do |product| %>
-			
-			<li>
-				<span class="img" style="background-image: url(<%= product.image %>)"></span>
-				<span class="name"><strong>	<%= product.name %></strong><br><%= product.brand %></span>
-				<div class="actions">
-					<span><%= link_to t(:delete), product_path(product), method: :delete, class: "button",data: { confirm: "Tem certeza que deseja remover item '#{product.name}' da sua lista?" } %></span>
-				</div>
-			</li>
-		<% end %>
-	</ul>
-</section>
+<% title = (@user_products_diaper.count > 1) ? 'Minhas fraldas' : 'Minha fralda' %>
+<%= render partial: 'products/product_list', locals: { category: title, products: @user_products_diaper } %>
 
-<section> 
-	<h2>Minha lista de presentes</h2>
-	<ul class="my-gifts-list">
-		<% @user_products.each do |product| %>
-			
-			<li>
-				<span class="img" style="background-image: url(<%= product.image %>)"></span>
-				<span class="name"><strong>	<%= product.name %></strong><br><%= product.brand %></span>
-				<div class="actions">
-					<span><%= link_to t(:delete), product_path(product), method: :delete, class: "button",data: { confirm: "Tem certeza que deseja remover item '#{product.name}' da sua lista?" } %></span>
-				</div>
-			</li>
-		<% end %>
-	</ul>
-</section>
+<% title = (@user_products.count > 1) ? 'Meus presentes' : 'Meu presente' %>
+<%= render partial: 'products/product_list', locals: { category: title, products: @user_products } %>
+
 <% if @user_products.count == 0 %>
 	<li>
 		<p>Sua lista de presentes está vazia =(</p>
