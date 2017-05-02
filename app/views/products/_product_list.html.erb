@@ -1,0 +1,16 @@
+<section> 
+	<h2><%= category %></h2>
+	<ul class="gifts-list <%= category %>">
+		<% products.each do |product| %>
+			<% quantity = product.second.count %>
+			<% product 	= product.second.first %>
+			<li>
+				<span class="img" style="background-image: url(<%= product.image %>)"></span>
+				<span class="name"><%= product.name %></span>
+				<div class="actions">
+					<span><%= link_to t(:pick), edit_product_path(product) %></span>
+				</div>
+			</li>	
+		<% end %>
+	</ul>
+</section>
