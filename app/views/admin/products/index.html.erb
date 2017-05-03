@@ -1,5 +1,4 @@
-<ul class="products-list card">
-	<% @products_low.each do |product| %>
-		<%= render partial: 'item_list', locals: { product: product } %> 	
-	<% end %>
-</ul>
+<%= render partial: 'product_list', locals: { products: @products_diaper, category: 'diaper' } %> 	
+<%= render partial: 'product_list', locals: { products: @products_low, category: 'low' } %> 	
+<%= render partial: 'product_list', locals: { products: @products_med, category: 'med' } %> 	
+<%= render partial: 'product_list', locals: { products: @products_high, category: 'high' } %> 	

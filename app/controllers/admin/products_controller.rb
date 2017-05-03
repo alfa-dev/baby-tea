@@ -3,10 +3,10 @@ class Admin::ProductsController < ApplicationController
 	before_action :check_admin
 
 	def index
-		@products_diaper = Product.all.diaper.include_disabled.order(:name, :id).group_by(&:name)
-		@products_low 	 = Product.all.low.include_disabled.order(:name, :id).group_by(&:name)
-		@products_med 	 = Product.all.med.include_disabled.order(:name, :id).group_by(&:name)
-		@products_high 	 = Product.all.high.include_disabled.order(:name, :id).group_by(&:name)
+		@products_diaper = Product.all.include_disabled.diaper.order(:name, :id).group_by(&:name)
+		@products_low 	 = Product.all.include_disabled.low.order(:name, :id).group_by(&:name)
+		@products_med 	 = Product.all.include_disabled.med.order(:name, :id).group_by(&:name)
+		@products_high 	 = Product.all.include_disabled.high.order(:name, :id).group_by(&:name)
 	end
 
 	def new
