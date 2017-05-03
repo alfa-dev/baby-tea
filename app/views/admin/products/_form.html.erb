@@ -25,6 +25,11 @@
 	</p>
 
 	<p>
+		<%= product.label :enabled %>
+		<%= product.check_box :enabled %>
+	</p>
+
+	<p>
 		<%= product.label :category %>
 		<%= product.select :category, [[t(:low), :low], [t(:med), :med], [t(:high), :high], [t(:diaper), :diaper] ] %>
 	</p>

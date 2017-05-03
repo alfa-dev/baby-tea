@@ -3,7 +3,10 @@ class Admin::ProductsController < ApplicationController
 	before_action :check_admin
 
 	def index
-		@products = Product.all.group_by &:name
+		@products_diaper = Product.all.diaper.include_disabled.order(:name, :id).group_by(&:name)
+		@products_low 	 = Product.all.low.include_disabled.order(:name, :id).group_by(&:name)
+		@products_med 	 = Product.all.med.include_disabled.order(:name, :id).group_by(&:name)
+		@products_high 	 = Product.all.high.include_disabled.order(:name, :id).group_by(&:name)
 	end
 
 	def new
@@ -40,10 +43,10 @@ class Admin::ProductsController < ApplicationController
 	def update
 		find_product
 
-		Product.where(name: @product.name).update(product_params)
+		Product.include_disabled.where(name: @product.name).update(product_params)
 
 	    if @product.save
-	      redirect_to admin_product_path(@product), notice: 'Produto foi atualizado com sucesso'
+	      redirect_to admin_products_path(anchor: "product_#{@product.id}"), notice: 'Produto foi atualizado com sucesso'
 	    end
 	end
 
@@ -61,11 +64,11 @@ class Admin::ProductsController < ApplicationController
 	private
 
 	def find_product
-		@product = Product.find params[:id]
+		@product = Product.include_disabled.find params[:id]
 	end
 
 	def product_params
-		params.require(:product).permit(:name, :image, :url, :category, :brand)
+		params.require(:product).permit(:name, :image, :url, :category, :brand, :enabled)
 	end
 
 	def check_admin

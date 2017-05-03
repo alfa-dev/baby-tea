@@ -19,6 +19,18 @@
     	&:hover {
 			background-color: #efefef;
     	}
+
+    	&.disabled {
+    		opacity: .5;
+    		background: #e3e3e3;
+    	}
+
+    	.enabled a{ 
+			font-weight: bold;
+			color: #3c3c3c;
+			font-size: 20px;
+			text-decoration: none;
+		}
 		
 		.quantity {
 			display: inline-block;

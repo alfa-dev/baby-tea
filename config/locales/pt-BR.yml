@@ -13,3 +13,6 @@ pt-BR:
   high: Alto
   diaper: Fralda
   brand: marca
+  enabled:
+    'true': ☑
+    'false': ☐
