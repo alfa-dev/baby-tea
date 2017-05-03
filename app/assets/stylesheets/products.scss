@@ -2,15 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@keyframes targetLink {
-  0% {
-    box-shadow: 0px 0px 0px 3px rgba(#2ecc71, 1) inset;
-  }
-  100% {
-    box-shadow: 0px 0px 0px 3px rgba(#2ecc71, 0) inset;
-  }
-}
-
 .products-list {
 	padding: 0;
 	margin: 0;
@@ -23,10 +14,6 @@
     	padding: 10px 20px;
     	margin: 0;
     	border-bottom: 1px solid #e0e0e0;
-		
-		&:target {
-			animation: 3s targetLink;
-		}
 
     	&:hover {
 			background-color: #efefef;
