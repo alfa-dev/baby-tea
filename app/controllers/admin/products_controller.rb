@@ -29,14 +29,14 @@ class Admin::ProductsController < ApplicationController
 			@product = Product.new product_params
 
 		    if @product.save
-		     	redirect_to admin_product_path(@product), notice: 'Produto foi criado com sucesso' unless quantity > 1
+	      		redirect_to admin_products_path(anchor: "product_#{@product.id}"), notice: 'Produto foi criado com sucesso'
 		    else
 		    	redirect_to :back, notice: @product.errors
 		    end
 		end
 
 		if quantity > 1
-			redirect_to admin_products_path, notice: "#{quantity} produtos foram criados com sucesso"
+	      	redirect_to admin_products_path(anchor: "product_#{@product.id}"), notice: 'Produto foi criado com sucesso'
 		end
 	end
 
