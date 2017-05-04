@@ -46,6 +46,20 @@ bodyOnReady(function(){
 			}
 		});	
 	}
+
+
+	var timeoutHandle = null;
+	$(".empty-list a").on("mouseover", function(){
+		$(".empty-list .emoji").html("😊");
+
+		if(timeoutHandle){
+		    clearTimeout(timeoutHandle);
+		    timeoutHandle = null;
+		}
+		timeoutHandle = setTimeout(function () {
+		    $(".empty-list .emoji").html("😴");
+		}, 5000);
+	});
 });
 
 

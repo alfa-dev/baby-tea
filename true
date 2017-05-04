@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20170504001111_add_gift_offer_to_user.rb

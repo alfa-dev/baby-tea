@@ -1,5 +1,7 @@
 
-<%= render partial: 'product_list', locals: { category: 'Fralda', products: @products_diaper } %>
-<%= render partial: 'product_list', locals: { category: 'Primeira categoria', products: @products_low } %>
-<%= render partial: 'product_list', locals: { category: 'Premium', products: @products_med } %>
-<%= render partial: 'product_list', locals: { category: 'Família - Pessoas Ricas', products: @products_high } %>
+<%= render partial: 'product_list', locals: { category: 'Fralda', products: @products_diaper } if @products.nil? %>
+<%= render partial: 'product_list', locals: { category: 'Primeira categoria', products: @products_low } if @products.nil? %>
+<%= render partial: 'product_list', locals: { category: 'Premium', products: @products_med } if @products.nil? %>
+<%= render partial: 'product_list', locals: { category: 'Família - Pessoas Ricas', products: @products_high } if @products.nil? %>
+
+<%= render partial: 'product_list', locals: { category: t("gift.#{@category}"), products: @products } unless @products.nil? %>

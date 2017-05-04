@@ -16,3 +16,7 @@ pt-BR:
   enabled:
     'true': ☑
     'false': ☐
+  gift:
+    low: "Categoria 1 - até R$ 20,00"
+    med: "Premium - até R$ 60,00"
+    high: "Premium Plus Advanced - mais que R$ 60,00"

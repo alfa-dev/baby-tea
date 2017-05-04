@@ -12,6 +12,7 @@ body {
   font-family: "Helvetica neue", Helvetica Neue, Helvetica, Arial, sans-serif;
   padding: 0px;
   margin: 0px;
+  padding-bottom: 50px; 
 }
 
 
@@ -24,8 +25,44 @@ body {
 	padding: 5px 10px;
 }
 
-#flash-notice { display: none; }
+.empty-list {
+  border: 1px solid rgba(0,0,0,0.2);
+  text-align: center;
 
+  &.gift-list {
+    position: relative;
+    &:before {
+      content: "";
+      opacity: 0.3;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0px; 
+      background-image: image_url('gift_pack_resized.png');
+      background-repeat: no-repeat;
+      background-position: top right ;
+      z-index: -1; 
+    }
+    &:after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0px; 
+      background: #fff;
+      z-index: -2; 
+    }
+  }
+
+  .emoji {
+    font-size: 50px;
+  }
+
+}
+
+#flash-notice { display: none; }
 
 * { &:target { animation: 3s targetLink; } }
 @keyframes targetLink {

@@ -1,0 +1,9 @@
+<p>
+	Primeiro escolha uma Fralda =D
+</p>
+
+<ul>
+	<% @products_diaper.each do |diaper| %>
+		<li><%= link_to diaper.name, edit_product_path(diaper) %></li>
+	<% end %>
+</ul>
