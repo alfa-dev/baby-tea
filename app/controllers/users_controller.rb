@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 	end
 
 	def how_to_gift
-		current_user.update(gift_offer: true) unless current_user.gift_offer?
+		current_user.update(gift_offer: true)
 
 		@products = Product.where.not(category: "diaper").group_by(&:category).map{ |i| i.second.first }
 	end
