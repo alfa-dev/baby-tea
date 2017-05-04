@@ -67,15 +67,14 @@ body {
     &:after {
       content: "vazio";
       position: absolute;
-      transform: rotateZ(31deg);
       font-size: 27px;
       color: #ccc;
       letter-spacing: 2px;
-      top: 2px;
-      left: 1px;
+      top: 1.5em;
+      left: 50%;
+      transform: translate(-50%);
     }
   }
-
   .emoji {
     font-size: 50px;
   }
