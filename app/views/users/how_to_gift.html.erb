@@ -1,12 +1,12 @@
-<p>
-	Agora, você pode escolher um presentinho também 😉.<br>
-	Existem <strong><%= @products.count %></strong> categorias.
-</p>
+<h2>
+	Agora, você pode escolher um presentinho também 😉.
+</h2>
+<h3>Existem <strong><%= @products.count %></strong> categorias.</h3>
 
-<ul>
+<ul class="list-item">
 	<% @products.each do |gift| %>
-		<li><%= link_to t("gift.#{gift.category}"), products_path( category: gift.category ) %></li>
+		<li><%= link_to t("gift.#{gift.category}").html_safe, products_path( category: gift.category ) %></li>
 	<% end %>
 </ul>
 
-<%= link_to "Não quero escolher o presente agora.", user_path(current_user) %>
+<%= link_to "Não quero escolher o presente agora.", user_path(current_user), class: "back-to-home" %>

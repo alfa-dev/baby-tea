@@ -1,16 +1,40 @@
-.how_to_diaper {
+.how_to_diaper, .how_to_gift {
 	background: #2980b9;
 
-	h2 {
+	h2,h3 {
 		color: #fff;
-		text-align: center;
-		text-shadow: 1px 1px 0px rgba(0,0,0,0.4);
+	    text-align: center;
+	    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.4);
+	    width: 90%;
+	    box-sizing: border-box;
+	    margin: 30px auto 0px;
 	} 
+
+	h3 {
+		margin-top: 5px;
+		font-weight: normal; 
+	}
+
+	.back-to-home {
+		display: block;
+		background: #fff;
+		color: #333;
+		padding: 7px;
+		border: 1px solid #333;
+		width: 70%;
+		margin: 0 auto;
+		text-decoration: none;
+		text-align: center;
+		text-shadow: 0px 0px 0px rgba(0,0,0,0.4);
+		margin-top: 20px;
+		margin-bottom: 40px;
+		border-radius: 10px; 
+	}
 
 	.list-item {
 		padding: 0px;
 		margin: 0px;
-		margin-top: 50px;
+		margin-top: 20px;
 
 		li {
 			position: relative;
@@ -20,7 +44,7 @@
 			padding: 0px;
 
 			&:nth-child(1) { background-color: #e74c3c; }
-			&:nth-child(2) { background-color: #f1c40f; }
+			&:nth-child(2) { background-color: #e67e22; }
 			&:nth-child(3) { background-color: #16a085; }
 			&:nth-child(4) { background-color: #9b59b6; }
 
@@ -30,6 +54,14 @@
 				padding: .5em;
 				margin: 0px;
 				text-decoration: none;
+				text-shadow: 1px 1px 0px rgba(0,0,0,0.6); 
+
+				span {
+					font-size: 18px;
+					opacity: 0.8;
+					display: block;
+					text-shadow: 1px 1px 0px rgba(0,0,0,0.3); 
+				}
 			}
 
 			.img {
@@ -39,4 +71,9 @@
 			}
 		}
 	}	
+}
+
+
+.how_to_gift {
+	background: #27ae60;
 }
