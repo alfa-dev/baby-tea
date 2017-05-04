@@ -1,6 +1,6 @@
 <section> 
 	<h2><%= category %></h2>
-	<ul class="gifts-list <%= category %>">
+	<ul class="gifts-list <%= category.gsub(" ", "-").downcase %>">
 		<% products.each do |product| %><!--
 		 	<% quantity = product.second.count if product.class == Array %>
 		 	<% product 	= product.second.first if product.class == Array %>
