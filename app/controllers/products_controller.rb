@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
 					<span class='gift'>#{@product.name}</span>
 					<img src='#{@product.image}' alt=''>
 					<span class='thanks'>Muito obrigado!</span>
-					<a href='#close'>ok!</a>
+					<a href='#close'>Escolher presente!</a>
 				  </p>"
 		notice = "<p class='diaper-modal'>
 				  	Você selecionou a fralda
