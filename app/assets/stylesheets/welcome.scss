@@ -67,7 +67,7 @@ body {
     text-decoration: none;
     color: #ccc;
   }
-  
+
   .emoji {
     font-size: 50px;
   }
@@ -98,7 +98,7 @@ body {
   }
 }
 
-#flash-notice { display: none; }
+// #flash-notice { display: none; }
 
 * { &:target { animation: 3s targetLink; } }
 @keyframes targetLink {

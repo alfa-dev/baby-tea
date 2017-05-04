@@ -11,7 +11,8 @@
   </head>
 
   <body class="<%= current_user.nil? ? "unlogged" : "logged"  %> <%= "admin" if controller.class.parents.include? Admin %> <%="flash-notice" unless flash[:notice].nil? %> <%= action_name %>">
-	  <div id="flash-notice"><p><%= flash[:notice] %></p></div> 
+	  
+    <%= render partial: '/flash_notice' if flash[:notice] %> 
   	<%= render partial: '/menu_top' %>
 
   	<main>

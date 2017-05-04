@@ -17,8 +17,22 @@ class ProductsController < ApplicationController
 
 		@product.user = current_user
 
+		notice = "<p class='gift-modal'>Você selecionou a o presente
+					<span class='gift'>#{@product.name}</span>
+					<img src='#{@product.image}' alt=''>
+					<span class='thanks'>Muito obrigado!</span>
+					<a href='#close'>ok!</a>
+				  </p>"
+		notice = "<p class='diaper-modal'>
+				  	Você selecionou a fralda
+				  	<span class='gift'>#{@product.name}</span>
+					<img src='#{@product.image}' alt=''>
+				  	<span class='thanks'>Muito obrigado!</span>
+				  	<a href='#close'>ok!</a>
+				  </p>" if @product.category == "diaper"
+
 		if @product.save
-		    redirect_to user_path(current_user), notice: 'Produto foi selecionado com sucesso'
+		    redirect_to user_path(current_user), notice: notice
 		else
 		    redirect_to :back, notice: @product.errors
 		end

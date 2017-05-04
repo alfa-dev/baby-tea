@@ -1,0 +1,57 @@
+.diaper-modal, .gift-modal {
+	position: fixed;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #2980b9;
+    z-index: 1;
+    margin: 0px;
+    padding: 0px;
+    color: #fff;
+    font-size: 1.5em;
+    padding: 10%;
+    box-sizing: border-box;
+    text-align: center;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+
+    .gift {
+    	display: block;
+    	font-weight: bold;
+		font-size: 2em;
+		text-align: center;
+		margin-top: 3%;
+    }
+
+    .thanks {
+    	display: block;
+		font-size: 2.2em;
+		text-align: center;
+		margin-top: 2%;
+	}
+	
+	img {
+		width: 40%;
+	}
+
+	a {
+		text-decoration: none;
+		color: #fff;
+		background-color: #27ae60;
+		padding: 2% 4%;
+		border-radius: 10px;
+		text-shadow: none;
+		text-transform: uppercase;
+		display: block;
+		max-width: 3em;
+		box-shadow: 2px 2px 2px rgba(0,0,0,.3);
+		margin: 8% auto 0px;
+	}
+}
+
+.gift-modal {
+	background-color: #27ae60;
+
+	a {
+		background-color: #2980b9;
+	}
+}
