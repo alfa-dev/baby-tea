@@ -1,19 +1,17 @@
-<p>
-	<strong><%= t(:name) %>: </strong>
-	<%= @product.name %>
-</p>
+<%= content_tag :h2 do %>
+	Você escolheu 
+	<%= "a fralda" if @product.category == "diaper" %>
+	<%= "o presente" unless @product.category == "diaper" %>
 
-<p>
-	<strong><%= t(:url) %>: </strong>
-	<%= @product.url %>
-</p>
+	<span class="name"><%= @product.name %></span>
+	<span class="brand"><%= @product.brand %></span>
+<% end %>
 
-<p>
-	<strong><%= t(:image) %>: </strong>
-	<%= @product.image %>
-</p>
+<%= link_to "referência", @product.url, target: "_blank" %>
+<%= image_tag(@product.image) %>
 
-<p>
-	<strong><%= t(:category) %>: </strong>
-	<%= @product.category %>
-</p>
+<% if @product.category == "diaper" %>
+	<%= link_to "Escolher presente", user_how_to_gift_path(current_user) %>
+<% else %>
+	<%= link_to "Ok!", user_path(current_user) %>
+<% end %>
