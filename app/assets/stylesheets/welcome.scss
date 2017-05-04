@@ -83,7 +83,26 @@ body {
     border: 1px solid rgba(0,0,0,0.2);
     background: #fff; 
   }
+}
 
+.list-item {
+  padding: 0px;
+  margin: 0px;
+  margin-top: 50px;
+
+  li {
+  	position: relative;
+  	border: 1px solid rgba(0,0,0,0.2);
+  	font-size: 1.5em;
+  	text-align: center;
+  	padding: .5em;
+
+  	.img {
+  		position: absolute;
+  		top: 0px;
+  		left: 0px;
+  	}
+  }
 }
 
 #flash-notice { display: none; }

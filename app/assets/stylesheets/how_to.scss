@@ -1,0 +1,42 @@
+.how_to_diaper {
+	background: #2980b9;
+
+	h2 {
+		color: #fff;
+		text-align: center;
+		text-shadow: 1px 1px 0px rgba(0,0,0,0.4);
+	} 
+
+	.list-item {
+		padding: 0px;
+		margin: 0px;
+		margin-top: 50px;
+
+		li {
+			position: relative;
+			border: 1px solid rgba(0,0,0,0.2);
+			font-size: 1.5em;
+			text-align: center;
+			padding: 0px;
+
+			&:nth-child(1) { background-color: #e74c3c; }
+			&:nth-child(2) { background-color: #f1c40f; }
+			&:nth-child(3) { background-color: #16a085; }
+			&:nth-child(4) { background-color: #9b59b6; }
+
+			a {
+				color: #fff;
+				display: block;
+				padding: .5em;
+				margin: 0px;
+				text-decoration: none;
+			}
+
+			.img {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+		}
+	}	
+}
