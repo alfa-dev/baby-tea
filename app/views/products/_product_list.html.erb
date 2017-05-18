@@ -5,7 +5,9 @@
 	<% if @filter || controller_name == "users" %>
 		<%= content_tag :h2 do %>
 			<%= category.html_safe %>
-			<%= link_to t("#{controller_name}.#{category}.more").html_safe, products_path if controller_name == "users" %>		
+			<% link = category == "Minha fralda" || category == "Minhas fraldas" ? products_path( category: 'diaper' ) : user_how_to_gift_path(current_user) %>
+			
+			<%= link_to t("#{controller_name}.#{category}.more").html_safe, link if controller_name == "users" %>		
 		<% end %>
 	<% end %>
 	

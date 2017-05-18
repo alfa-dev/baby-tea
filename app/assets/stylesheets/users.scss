@@ -4,8 +4,8 @@
 
 .users.show {
 	main section {
-		border: 1px dashed $gray;
 		padding: 0px;
+		margin-bottom: 15px;
 	}
 
 	h2 {
@@ -13,6 +13,8 @@
 		padding: 10px;
 		font-size: 1em;
 		background-color: rgba($gray, .2);
+		border-bottom: 1px solid rgba($gray, .5);
+		border-top: 1px solid rgba($gray, .5);
 
 		a {
 			font-size: .8em;
