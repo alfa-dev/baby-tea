@@ -16,19 +16,31 @@
        	z-index: -3;
        	top: 0px;
 	}
-}
+	main {
+		width: 100%;
+		margin: 0 auto;
+		margin-top: 60px;
+	}
 
-main {
-	width: 100%;
-	margin: 0 auto;
-	margin-top: 20px;
-}
+	h1, h2 {
+		color: darken($gray, 20%);
+	}
 
-section {
-	width: 100%;
-	padding: 5px 2%;
-	margin: 0 auto;
-	box-sizing: border-box;
+	h3 {
+		color: darken($gray, 5%);
+	}
+
+	h2 {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	section {
+		width: 100%;
+		padding: 5px 2%;
+		margin: 0 auto;
+		box-sizing: border-box;
+	}
 }
 
 @media (max-width: 576px) { 

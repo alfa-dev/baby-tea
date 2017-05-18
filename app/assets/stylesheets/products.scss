@@ -1,16 +1,6 @@
 .products.show {
 	
-	h1, h2 {
-		color: $blue;
-	}
-
-	h2 {
-		text-align: center;
-		margin-bottom: 20px;
-	}	
-	
 	main {
-		
 		text-align: center;
 
 		.image {
@@ -103,12 +93,6 @@
     		float: right;
     	}
 	}
-}
-
-h2 {
-	margin-bottom: 5px;
-	margin-top: 40px;
-	color: #3c3c3c; 
 }
 
 .gifts-list, .my-gifts-list {

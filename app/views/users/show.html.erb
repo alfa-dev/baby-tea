@@ -3,7 +3,7 @@
 	<%= render partial: 'products/product_list', locals: { category: title, products: @user_products } %>
 <% else %>
 	<section class="empty-list gift-list">
-		<p>Sacola de presentes vazia <br>😞</p>
+		<h2>Sacola de presentes vazia <br>😞</h2>
 		<%= link_to "Vazio", user_how_to_gift_path(current_user), class: "empty-gift" %>
 		<p><%= link_to "Clique aqui", products_path %> para ver a lista de presentes completa.</p>
 	</section>
