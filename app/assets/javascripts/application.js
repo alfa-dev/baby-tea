@@ -60,6 +60,13 @@ bodyOnReady(function(){
 		    $(".empty-list .emoji").html("😴");
 		}, 5000);
 	});
+
+	var $menu = $(".menu");
+	$(".menu-button").on("click", function(){
+		$menu.toggleClass("active");
+
+		return false;
+	});
 });
 
 

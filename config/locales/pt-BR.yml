@@ -20,3 +20,10 @@ pt-BR:
     low: "Categoria 1 <span>até R$ 20,00</span>"
     med: "Premium <span>até R$ 60,00</span>"
     high: "Premium Plus Advanced <span>mais que R$ 60,00</span>"
+
+  products:
+    index: "Lista de presentes"
+
+  users:
+    how_to_gift: Categorias de presentes
+    how_to_diaper: Tamanho das fraldas

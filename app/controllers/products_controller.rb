@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
 			@products_med 		= Product.all.where(user: nil, category: :med).group_by &:name
 			@products_high 		= Product.all.where(user: nil, category: :high).group_by &:name
 			@products_diaper 	= Product.all.where(user: nil, category: :diaper).group_by &:name
+
 		else
 			@category = params[:category];
 			@products = Product.all.where(user: nil, category: params[:category]).group_by &:name

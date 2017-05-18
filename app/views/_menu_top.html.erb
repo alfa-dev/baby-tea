@@ -1,13 +1,11 @@
 <% if current_user %>
 	<header id="user">
 		<%= link_to "›", :back, class: "back-button" %> 
-		<p><%= action_name %></p>
+		<h1><%= page_title %></h1>
 		<a href="" class="menu-button">&bull;&bull;&bull;</a>
 		<nav class="menu">
-			<div class="card">
-				<%= image_tag current_user.image %>
-				<span class="name"><%= current_user.name%></span>	
-			</div>
+			<%= image_tag current_user.image %>
+			<span class="name"><%= current_user.name%></span>	
 			<ul>
 				<% if admin? %>
 					<li><%= link_to "Produtos", admin_products_path %></li>

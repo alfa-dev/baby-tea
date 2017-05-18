@@ -18,4 +18,8 @@ class User < ApplicationRecord
 	def is_admin?
 		role == "Admin"
 	end
+
+	def first_name
+		name.split(' ', 2)[0] 
+	end
 end
