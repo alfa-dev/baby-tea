@@ -67,4 +67,15 @@ $(document).on('turbolinks:load', function(){
 
 		return false;
 	});
+
+	var lastScrollTop = 0;
+	$(window).scroll(function(event){
+	   var st = $(this).scrollTop();
+	   if (st > lastScrollTop){
+	       $("#user").slideUp("fast");
+	   } else {
+	       $("#user").slideDown("fast");
+	   }
+	   lastScrollTop = st;
+	});
 });
