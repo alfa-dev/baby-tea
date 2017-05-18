@@ -1,18 +1,20 @@
 <% if current_user %>
-	<div id="logged">
-		<header id="user" class="card">
-			<%= image_tag current_user.image %>
-			<p><strong><%= link_to "Admin", admin_products_path if admin? %> </strong><%= link_to current_user.name, user_path(current_user) %></p>
-			
-			<nav>
-				<ul>
-					<% if controller.class.parents.include? Admin %>
-						<li><%= link_to "Produtos", admin_products_path %></li>
-						<li><%= link_to "Cadastrar produto", new_admin_product_path %></li>
-					<% end %>
-					<li><%= link_to "Logout", signout_path, id: "sign_out" %></li>
-				</ul>
-			</nav>
-		</header>
-	</div>
+	<header id="user">
+		<%= link_to "›", :back, class: "back-button" %> 
+		<p><%= action_name %></p>
+		<a href="" class="menu-button">&bull;&bull;&bull;</a>
+		<nav class="menu">
+			<div class="card">
+				<%= image_tag current_user.image %>
+				<span class="name"><%= current_user.name%></span>	
+			</div>
+			<ul>
+				<% if admin? %>
+					<li><%= link_to "Produtos", admin_products_path %></li>
+					<li><%= link_to "Cadastrar produto", new_admin_product_path %></li>
+				<% end %>
+				<li><%= link_to "Logout", signout_path, id: "sign_out" %></li>
+			</ul>
+		</nav>		
+	</header>
 <% end %>

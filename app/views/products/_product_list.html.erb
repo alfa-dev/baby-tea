@@ -1,5 +1,5 @@
 <section> 
-	<h2><%= category.html_safe %></h2>
+	<%= content_tag :h2, category.html_safe if @filter %></h2>
 	<ul class="gifts-list <%= category.gsub(" ", "-").downcase %>">
 		<% products.each do |product| %><!--
 		 	<% quantity = product.second.count if product.class == Array %>

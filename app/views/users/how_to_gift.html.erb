@@ -1,7 +1,7 @@
 <h2>
-	Agora, você pode escolher um presentinho também 😉.
+	Agora, você pode escolher um presentinho também 😉
 </h2>
-<h3>Existem <strong><%= @products.count %></strong> categorias.</h3>
+<h3>Existem <strong><%= @products.count %></strong> categorias</h3>
 
 <ul class="list-item">
 	<% @products.each do |gift| %>
@@ -9,4 +9,4 @@
 	<% end %>
 </ul>
 
-<%= link_to "Não quero escolher o presente agora.", user_path(current_user), class: "back-to-home" %>
+<%= link_to "Não quero escolher o presente agora", user_path(current_user), class: "button" %>

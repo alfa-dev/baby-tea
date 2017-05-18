@@ -1,0 +1,41 @@
+#user {
+	
+	background: $blue;
+	line-height: 30px;
+	
+	.back-button, .menu-button{ 
+    	position: absolute;
+		color: #fff;
+		text-decoration: none;
+		font-size: 1.5em;
+		font-weight: bold;
+		transform: rotateY(180deg);
+    	display: inline-block;
+    	padding: 0px 10px;
+		left: 0px;
+		top: 0px;
+	}
+
+	.menu-button {
+    	position: absolute;
+		font-size: 1em;
+		right: 0px;
+	}
+
+	p { 
+		margin: 0px; 
+		padding: 0px; 
+		display: block; 
+		text-align: center;
+		color: #fff;
+		font-weight: bold; 
+	} 
+
+	.menu {
+		display: none;
+		
+		&.active {
+			display: block;
+		}
+	}
+}

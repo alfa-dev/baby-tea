@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 	end
 
 	def how_to_diaper
-		@products_diaper = Product.diaper.group_by(&:name).map{ |i| i.second.first }
+		@products_diaper = Product.diaper.where(user: nil).group_by(&:name).map{ |i| i.second.first }
 	end
 
 	def how_to_gift

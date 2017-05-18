@@ -1,18 +1,18 @@
-.how_to_diaper, .how_to_gift {
-	background: $blue;
-	
+.how_to_diaper, .how_to_gift {	
+	// #user { display: none; }
+
 	main {
 		max-width: 600px;
 		margin: 0 auto;
 	}
 
-	h2,h3 {
-		color: #fff;
+	h2,h3 {;
 	    text-align: center;
-	    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.4);
+	    // text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
 	    width: 90%;
 	    box-sizing: border-box;
 	    margin: 30px auto 0px;
+	    font-weight: normal;
 	} 
 
 	h3 {
@@ -80,6 +80,11 @@
 }
 
 
-.how_to_gift {
-	background: #27ae60;
+.how_to_gift {	
+	.button {
+		display: block;
+    	text-align: center;
+    	margin: 20px auto 0;
+    	width: 50%;
+	}
 }

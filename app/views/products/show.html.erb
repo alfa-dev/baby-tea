@@ -13,5 +13,5 @@
 	<%= link_to "Escolher presente", user_how_to_gift_path(current_user), class: "button" %>
 	<%= link_to "Não quero escolher o presente agora", user_how_to_gift_path(current_user) %>
 <% else %>
-	<%= link_to "Ok!", user_path(current_user) %>
+	<%= link_to "Ok!", user_path(current_user), class: "button" %>
 <% end %>
