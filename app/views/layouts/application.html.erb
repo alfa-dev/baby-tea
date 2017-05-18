@@ -10,7 +10,7 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
   </head>
 
-  <body class="<%= current_user.nil? ? "unlogged" : "logged"  %> <%= "admin" if controller.class.parents.include? Admin %> <%="flash-notice" unless flash[:notice].nil? %> <%= action_name %>">
+  <body class="<%= current_user.nil? ? "unlogged" : "logged"  %> <%= "admin" if controller.class.parents.include? Admin %> <%="flash-notice" unless flash[:notice].nil? %> <%= action_name %> <%= controller_name %>">
 	  
     <%= render partial: '/flash_notice' if flash[:notice] %> 
   	<%= render partial: '/menu_top' %>

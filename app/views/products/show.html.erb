@@ -1,17 +1,16 @@
 <%= content_tag :h2 do %>
 	Você escolheu 
-	<%= "a fralda" if @product.category == "diaper" %>
-	<%= "o presente" unless @product.category == "diaper" %>
-
-	<span class="name"><%= @product.name %></span>
-	<span class="brand"><%= @product.brand %></span>
 <% end %>
 
-<%= link_to "referência", @product.url, target: "_blank" %>
-<%= image_tag(@product.image) %>
+<div class="image">
+	<span class="name"><%= @product.name %></span>
+	<span class="brand"><%= @product.brand %></span>
+	<%= image_tag(@product.image) %>
+	<%= link_to "ver mais".html_safe, @product.url, target: "_blank" %>
+</div>	
 
 <% if @product.category == "diaper" %>
-	<%= link_to "Escolher presente", user_how_to_gift_path(current_user) %>
+	<%= link_to "Escolher presente", user_how_to_gift_path(current_user), class: "button" %>
 <% else %>
 	<%= link_to "Ok!", user_path(current_user) %>
 <% end %>
