@@ -72,9 +72,9 @@ $(document).on('turbolinks:load', function(){
 	$(window).scroll(function(event){
 	   var st = $(this).scrollTop();
 	   if (st > lastScrollTop){
-	       $("#user").slideUp("fast");
+	       $("#user").addClass("hide");
 	   } else {
-	       $("#user").slideDown("fast");
+	       $("#user").removeClass("hide");
 	   }
 	   lastScrollTop = st;
 	});

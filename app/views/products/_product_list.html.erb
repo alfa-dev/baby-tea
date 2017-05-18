@@ -1,5 +1,14 @@
 <section> 
-	<%= content_tag :h2, category.html_safe if @filter %></h2>
+	<%#= content_tag :h2, category.html_safe if @filter || controller_name == "users" %>
+	
+	
+	<% if @filter || controller_name == "users" %>
+		<%= content_tag :h2 do %>
+			<%= category.html_safe %>
+			<%= link_to t("#{controller_name}.#{category}.more").html_safe, products_path if controller_name == "users" %>		
+		<% end %>
+	<% end %>
+	
 	<ul class="gifts-list <%= category.gsub(" ", "-").downcase %>">
 		<% products.each do |product| %><!--
 		 	<% quantity = product.second.count if product.class == Array %>

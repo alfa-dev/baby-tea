@@ -1,3 +1,21 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.users.show {
+	main section {
+		border: 1px dashed $gray;
+		padding: 0px;
+	}
+
+	h2 {
+		margin: 0px;
+		padding: 10px;
+		font-size: 1em;
+		background-color: rgba($gray, .2);
+
+		a {
+			font-size: .8em;
+		}
+	}
+}

@@ -10,13 +10,16 @@
  	i {
  		margin-right: 5px;
  		background: #fff;
- 		line-height: 1em;
- 		height: 1em;
- 		width: 1em;
+ 		line-height: 1.2em;
+ 		height: 1.2em;
+ 		width: 1.2em;
  		color: $blue;
  		font-size: 20px;
  		border-radius: 50%;
  		border: 1px solid darken($blue, 10%);
+ 		font-style: normal;
+ 		display: inline-block;
+ 		text-align: center;
  	}
 }
 

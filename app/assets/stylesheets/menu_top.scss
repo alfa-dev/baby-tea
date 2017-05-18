@@ -10,6 +10,11 @@
 	z-index: 3;
 
 	box-shadow: 0 1px 2px rgba(0,0,0,0.30), 0 0px 1px rgba(0,0,0,0.22);
+	transition: .3s;
+
+	&.hide {
+		transform: translateY(-100%);
+	}
 	
 	.back-button, .menu-button{ 
     	position: absolute;
