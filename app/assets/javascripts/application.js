@@ -63,8 +63,13 @@ $(document).on('turbolinks:load', function(){
 
 	var $menu = $("#user .menu");
 	$("#user .menu-button").on("click", function(){
+		event.stopPropagation();
 		$menu.toggleClass("active");
 		return false;
+	});
+
+	$("body").on("click", function(){
+		$menu.removeClass("active");
 	});
 
 	var lastScrollTop = 0;
