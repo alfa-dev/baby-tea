@@ -1,0 +1,5 @@
+<pre class="card">
+	<% @logs.each do |l| %>
+		<%= l.user.name %> <%= l.action %>	<%= l.product.name %>	<%= l.created_at %> 
+	<% end %> 
+</pre>
