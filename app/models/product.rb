@@ -2,6 +2,8 @@ class Product < ApplicationRecord
 
 	belongs_to :user, required: false
 
+  has_many :logs
+
 	validates :name, presence: true
 
   DIAPER_ORDERED = ['Tamanho RN', 'Tamanho P', 'Tamanho M', 'Tamanho G']

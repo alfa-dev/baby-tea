@@ -10,6 +10,7 @@
 				<% if admin? %>
 					<li><%= link_to "Produtos", admin_products_path %></li>
 					<li><%= link_to "Cadastrar produto", new_admin_product_path %></li>
+					<li><%= link_to "Quem escolheu o que", admin_users_path %></li>
 				<% end %>
 				<li><%= link_to "Logout", signout_path, id: "sign_out" %></li>
 			</ul>

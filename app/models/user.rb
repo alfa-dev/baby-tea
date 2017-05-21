@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 	
 	has_many :products
+	has_many :logs
 
 	def self.from_omniauth(auth)
 		where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|

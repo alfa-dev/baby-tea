@@ -20,6 +20,7 @@ class ProductsController < ApplicationController
 		@product.user = current_user
 
 		if @product.save
+			log('add')
 		    redirect_to product_path(@product)
 		else
 		    redirect_to :back, notice: @product.errors
@@ -32,6 +33,7 @@ class ProductsController < ApplicationController
 
 	def destroy
 		find_product
+		log('remove')
 
 		@product.update(user: nil)
 		redirect_to user_path(current_user)
@@ -47,4 +49,8 @@ class ProductsController < ApplicationController
 		params.require(:product).permit(:name, :image, :url, :category, :brand)
 	end
 
+	def log action
+		user_log = Log.new(user_id: current_user.id, product_id: @product.id, action: action )
+		user_log.save
+	end
 end

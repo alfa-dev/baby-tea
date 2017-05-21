@@ -71,8 +71,4 @@ class Admin::ProductsController < ApplicationController
 		params.require(:product).permit(:name, :image, :url, :category, :brand, :enabled)
 	end
 
-	def check_admin
-		redirect_to user_path(current_user) unless current_user.is_admin?
-	end
-
 end
