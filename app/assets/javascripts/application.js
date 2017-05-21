@@ -64,7 +64,6 @@ $(document).on('turbolinks:load', function(){
 	var $menu = $("#user .menu");
 	$("#user .menu-button").on("click", function(){
 		$menu.toggleClass("active");
-
 		return false;
 	});
 
@@ -73,8 +72,12 @@ $(document).on('turbolinks:load', function(){
 	   var st = $(this).scrollTop();
 	   if (st > lastScrollTop){
 	       $("#user").addClass("hide");
+		   $("main").addClass("active");
+
 	   } else {
 	       $("#user").removeClass("hide");
+		   $("main").removeClass("active");
+	       
 	   }
 	   lastScrollTop = st;
 	});
