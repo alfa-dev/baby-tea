@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
 
+	before_action :check_logged
+
 	def index
 		@filter = params[:category].nil?
 

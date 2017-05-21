@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+	before_action :check_logged
+
 	def show
 		@user_products 		  = current_user.products.where.not(category: "diaper")
 		@user_products_diaper = current_user.products.diaper
