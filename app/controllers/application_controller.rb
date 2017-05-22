@@ -3,6 +3,13 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :admin?, :page_title, :check_admin, :check_logged
 
+  force_ssl if: :ssl_configured?
+
+  def ssl_configured?
+    !Rails.env.development?
+  end
+
+
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
